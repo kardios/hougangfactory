@@ -30,13 +30,12 @@ for uploaded_file in uploaded_files:
     raw_text = raw_text = "### End of Article " + str(count) + "###\n\n"
   input_text = input_text + raw_text
   
-with st.spinner("Running AI Model..."):
-  start = time.time()
-  prompt = "Read the text below." + instruction + "\n\n" + input_text
-  response = gemini.generate_content(prompt)
-  answer = response.text
-  st.write(response.prompt_feedback)  
-  end = time.time()
-  st.write(answer)
-  st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
-  
+  with st.spinner("Running AI Model..."):
+    start = time.time()
+    prompt = "Read the text below." + instruction + "\n\n" + input_text
+    response = gemini.generate_content(prompt)
+    answer = response.text
+    st.write(response.prompt_feedback)  
+    end = time.time()
+    st.write(answer)
+    st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
