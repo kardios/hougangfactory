@@ -10,7 +10,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 st.write("Hougang Factory :sunglasses: Testing Gemini 1.5 Pro :sunglasses:")
 
-Model_Option = genai.GenerativeModel('gemini-1.5-pro-latest')
+gemini = genai.GenerativeModel('gemini-1.5-pro-latest')
 
 instruction = st.text_input("Customise your own unique prompt:", "Generate short summaries of the articles. Present the summary of each article as one concise and coherent paragraph.")
 
@@ -33,7 +33,6 @@ for uploaded_file in uploaded_files:
 with st.spinner("Running AI Model..."):
   start = time.time()
   prompt = "Read the text below." + instruction + "\n\n" + input_text
-  gemini = genai.GenerativeModel(Model_Option)
   response = gemini.generate_content(prompt)
   answer = response.text
   st.write(response.prompt_feedback)  
