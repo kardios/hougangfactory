@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import time
 import google.generativeai as genai
-from openai import OpenAI
 from pypdf import PdfReader
 
 # Retrieve the API keys from the environment variables
