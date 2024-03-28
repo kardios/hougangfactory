@@ -29,7 +29,7 @@ for uploaded_file in uploaded_files:
         raw_text = raw_text + text + "\n"
     raw_text = raw_text + "\n**[End of Article " + str(count) + "]**\n"
   input_text = input_text + raw_text
-  st.write(input_text)
+  #st.write(input_text)
 
 if st.button(":rocket:"):
   with st.spinner("Running AI Model..."):
