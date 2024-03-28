@@ -21,13 +21,13 @@ for uploaded_file in uploaded_files:
   raw_text = ""
   if uploaded_file is not None:
     count = count + 1
-    raw_text = raw_text + "**[Start of Article " + str(count) + "]**\n"
+    raw_text = raw_text + "\n**[Start of Article " + str(count) + "]**\n"
     doc_reader = PdfReader(uploaded_file)
     for i, page in enumerate(doc_reader.pages):
       text = page.extract_text()
       if text:
         raw_text = raw_text + text + "\n"
-    raw_text = raw_text + "**End of Article " + str(count) + "**\n\n"
+    raw_text = raw_text + "\n**[End of Article " + str(count) + "]**\n"
   input_text = input_text + raw_text
   st.write(input_text)
 
