@@ -29,6 +29,7 @@ for uploaded_file in uploaded_files:
         raw_text = raw_text + text + "\n"
     raw_text = raw_text = "### End of Article " + str(count) + "###\n\n"
   input_text = input_text + raw_text
+  st.write(input_text)
   
   with st.spinner("Running AI Model..."):
     start = time.time()
