@@ -14,7 +14,7 @@ gemini = genai.GenerativeModel('gemini-1.5-pro-latest')
 
 instruction = st.text_input("Customise your own unique prompt:", "You are my reading assistant. There are one or more articles below. Please read them carefully. For each one, generate a short summary that captures the main ideas and key details. Present the summary of each article as one concise and coherent paragraph.")
 
-uploaded_files = st.file_uploader("Upload the PDF documents to analyse and click the :rocket: button", type = "pdf", accept_multiple_files = True)
+uploaded_files = st.file_uploader("Upload the PDF documents to analyse and click :rocket:", type = "pdf", accept_multiple_files = True)
 count = 0
 input_text = ""
 for uploaded_file in uploaded_files:
